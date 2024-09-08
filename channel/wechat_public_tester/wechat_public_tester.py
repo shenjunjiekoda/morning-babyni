@@ -2,6 +2,7 @@ from datetime import date
 import requests
 from channel.config import Config
 from channel.parameters import ParameterResolver
+from channel.weibo.topn import formatted_top_list
 
 
 class WechatTesterPlatform:
@@ -78,6 +79,7 @@ class WechatTesterPlatform:
                     "value": ParameterResolver.get_daily_quote(),
                     "color": "#808A87",
                 },
+                "weibo_topn": {"value": formatted_top_list(20)},
             },
         }
 

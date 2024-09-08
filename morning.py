@@ -12,18 +12,25 @@ def morning(channel: str):
     """
     if channel == "pushdeer":
         print("Running PushDeer...")
+        
         pushdeer = PushDeerPlatform()
         pushdeer.run()
+        
     elif channel == "wechat":
         print("Running WeChat...")
+        
         wechat = WechatTesterPlatform()
         wechat.run()
+        
     elif channel == "all":
         print("Running ALl...")
+        
         pushdeer = PushDeerPlatform()
-        wechat = WechatTesterPlatform()
         pushdeer.run()
+        
+        wechat = WechatTesterPlatform()
         wechat.run()
+        
     else:
         print("Invalid channel. Choose 'pushdeer', 'wechat', or 'all'.")
 

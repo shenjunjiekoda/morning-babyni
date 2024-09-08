@@ -15,3 +15,7 @@
 距离{{name.DATA}}的生日还有{{birthday.DATA}}天
 
 每日一句：{{one.DATA}}
+
+微博热搜：
+
+{{weibo_topn.DATA}}

@@ -18,7 +18,7 @@ jobs:
       BIRTHDAY: ${{ secrets.BIRTHDAY }}
       CITY: ${{ secrets.CITY }}
       PROVINCE: ${{ secrets.PROVINCE }}
-      PUSHKEYS: ${{ secrets.PUSHKEYS }}
+      PUSHDEER_PUSHKEYS: ${{ secrets.PUSHDEER_PUSHKEYS }}
 
     steps:
     - name: checkout

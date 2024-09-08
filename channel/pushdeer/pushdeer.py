@@ -3,6 +3,7 @@ from typing import Optional, Union
 from channel.config import Config
 import requests
 from channel.parameters import ParameterResolver
+from channel.weibo.topn import formatted_top_list
 
 
 class PushDeer:
@@ -226,6 +227,7 @@ class PushDeerPlatform:
         date_str = ParameterResolver.get_today_and_weekday()
         love_day, birthday_day = ParameterResolver.calculate_days()
         daily_quote = ParameterResolver.get_daily_quote()
+        weibo_top20 = formatted_top_list(20, True)
         dict_data = {
             "date": date_str,
             "name": name,
@@ -236,11 +238,13 @@ class PushDeerPlatform:
             "love_day": love_day,
             "birthday": birthday_day,
             "one": daily_quote,
+            "weibo_topn": weibo_top20
         }
 
         md_str = ParameterResolver.render_template("template.md", dict_data)
         api = PushDeer(pushkey=pushkey)
-        api.send_markdown("# 早上好，亲爱的", desp=md_str)
+        api.send_markdown("# 早上好，亲爱的\n"+md_str)
+        # api.send_markdown("# 早上好，亲爱的", desp=md_str)
 
     def run(self):
         """

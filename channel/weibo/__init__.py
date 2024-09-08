@@ -1,0 +1,3 @@
+"""
+Weibo top api package
+"""
