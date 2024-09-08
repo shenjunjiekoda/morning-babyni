@@ -14,4 +14,3 @@ class Config:
     CITY = os.getenv('CITY')
     BIRTHDAY = os.getenv('BIRTHDAY')
     LOVE_DATE = os.getenv('LOVE_DATE')
-    WEATHER_API_KEY = os.getenv('WEATHER_API_KEY')
