@@ -48,5 +48,6 @@ export LOVE_DATE='2016-11-29'
 export BIRTHDAY='1997-10-03'
 export CITY='上海'
 export PROVINCE='上海'
+export PUSHDEER_PUSHKEYS='xxxxxx'
 pip install -r requirements.txt && python morning.py
 ```
