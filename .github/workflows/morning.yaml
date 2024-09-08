@@ -19,6 +19,7 @@ jobs:
       CITY: ${{ secrets.CITY }}
       PROVINCE: ${{ secrets.PROVINCE }}
       PUSHDEER_PUSHKEYS: ${{ secrets.PUSHDEER_PUSHKEYS }}
+      PUSHPLUS_TOKENS: ${{ secrets.PUSHPLUS_TOKENS }}
 
     steps:
     - name: checkout
@@ -29,5 +30,5 @@ jobs:
     - name: sender
       uses: actions/setup-python@v2
 
-    - run: pip install -r ./requirements.txt && python ./morning.py
+    - run: pip install -r ./requirements.txt && python ./morning.py --channel='all'
 

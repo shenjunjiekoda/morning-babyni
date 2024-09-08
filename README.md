@@ -1,6 +1,6 @@
 # morning-babyni
 
-Morning to my baby ni from Wechat Public Tester or PushDeer by Github action.
+Morning to my baby ni from Wechat Public Tester or PushDeer or PushPlus by Github action.
 
 And you can customize the template on the platform, My template is in [template.md](template.md).
 
@@ -34,6 +34,10 @@ Mac 11+ users can download the app from the *app Store.app*.
 
 Android users can download the app test version from ([GitHub](https://github.com/easychen/pushdeer/releases/tag/android1.0alpha)|[Gitee](https://gitee.com/easychen/pushdeer/releases/android1.0alpha))。
 
+## PushPlus
+
+Get your `PUSHPLUS_TOKENS` from [here](https://www.pushplus.plus/push1.html)
+
 ## Run in local
 
 Run by Python in local:
@@ -49,5 +53,6 @@ export BIRTHDAY='1997-10-03'
 export CITY='上海'
 export PROVINCE='上海'
 export PUSHDEER_PUSHKEYS='xxxxxx'
-pip install -r requirements.txt && python morning.py
+export PUSHPLUS_TOKENS='xxxxxx'
+pip install -r requirements.txt && python morning.py --channel='all'
 ```

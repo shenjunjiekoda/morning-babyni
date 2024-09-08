@@ -93,7 +93,7 @@ def formatted_hot_search_list(hot_search_list: list, markdown: bool = False) -> 
         title = item.get("title", "")
         url = item.get("url", "")
         if markdown:
-            formatted_list.append(f"[{rank + 1}] {title}")
+            formatted_list.append(f"[\[{rank + 1}\] {title}]({url})")
             # formatted_list.append(url) # Pushdeer cannot parse links in markdown
         else:
             formatted_list.append(f"[{rank + 1}] {title} ({url})")

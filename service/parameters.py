@@ -1,9 +1,9 @@
 from datetime import date
 import re
 import requests
-from channel.config import Config
-import channel.weather.cityinfo as cityinfo
-from channel.weather.weather_api import WeatherAPI
+from service.config import Config
+import service.weather.cityinfo as cityinfo
+from service.weather.weather_api import WeatherAPI
 
 
 class ParameterResolver:

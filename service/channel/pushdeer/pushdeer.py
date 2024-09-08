@@ -1,9 +1,9 @@
 import json
 from typing import Optional, Union
-from channel.config import Config
+from service.config import Config
 import requests
-from channel.parameters import ParameterResolver
-from channel.weibo.topn import formatted_top_list
+from service.parameters import ParameterResolver
+from service.weibo.topn import formatted_top_list
 
 
 class PushDeer:
@@ -15,7 +15,6 @@ class PushDeer:
     - pushkey (str): PushDeer pushkey (optional)
     """
 
-    default_server = "https://api2.pushdeer.com"
     endpoint = "/message/push"
 
     def __init__(self, server: Optional[str] = None, pushkey: Optional[str] = None):
@@ -26,7 +25,7 @@ class PushDeer:
         - server (str): API Server address
         - pushkey (str): PushDeer pushkey (optional)
         """
-        self.server = server or self.default_server
+        self.server = server or Config.PUSHDEER_SERVER_URL
         self.pushkey = pushkey
 
     def _push(
@@ -238,12 +237,12 @@ class PushDeerPlatform:
             "love_day": love_day,
             "birthday": birthday_day,
             "one": daily_quote,
-            "weibo_topn": weibo_top20
+            "weibo_topn": weibo_top20,
         }
 
         md_str = ParameterResolver.render_template("template.md", dict_data)
         api = PushDeer(pushkey=pushkey)
-        api.send_markdown("# 早上好，亲爱的\n"+md_str)
+        api.send_markdown("# 早上好，亲爱的\n" + md_str)
         # api.send_markdown("# 早上好，亲爱的", desp=md_str)
 
     def run(self):

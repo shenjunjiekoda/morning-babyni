@@ -1,8 +1,8 @@
 from datetime import date
 import requests
-from channel.config import Config
-from channel.parameters import ParameterResolver
-from channel.weibo.topn import formatted_top_list
+from service.config import Config
+from service.parameters import ParameterResolver
+from service.weibo.topn import formatted_top_list
 
 
 class WechatTesterPlatform:
