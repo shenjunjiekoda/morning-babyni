@@ -90,14 +90,11 @@ class PushPlus:
             "content": content,
             "template": template,
         }
-        # response = requests.get(
-        # server + self.endpoint, params=params, timeout=10
-        # )
         response = requests.post(
             server + self.endpoint,
             data=json.dumps(params),
             headers={"Content-Type": "application/json"},
-            timeout=10,
+            timeout=1000,
         )
         response.raise_for_status()
         return response.json()
